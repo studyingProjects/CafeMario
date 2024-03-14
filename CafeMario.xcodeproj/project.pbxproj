@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		6CF67E462BA2F3E200B8484C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E452BA2F3E200B8484C /* AppDelegate.swift */; };
 		6CF67E482BA2F3E200B8484C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E472BA2F3E200B8484C /* SceneDelegate.swift */; };
-		6CF67E4A2BA2F3E200B8484C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E492BA2F3E200B8484C /* ViewController.swift */; };
-		6CF67E4D2BA2F3E200B8484C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF67E4B2BA2F3E200B8484C /* Main.storyboard */; };
 		6CF67E4F2BA2F3E300B8484C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CF67E4E2BA2F3E300B8484C /* Assets.xcassets */; };
 		6CF67E522BA2F3E300B8484C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF67E502BA2F3E300B8484C /* LaunchScreen.storyboard */; };
+		6CF67E5D2BA2F48000B8484C /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E5C2BA2F48000B8484C /* UIViewController+Preview.swift */; };
+		6CF67E732BA2F66700B8484C /* CommonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E722BA2F66700B8484C /* CommonSize.swift */; };
+		6CF67E752BA2F89600B8484C /* task.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6CF67E742BA2F89600B8484C /* task.rtf */; };
+		6CF67E772BA2F8B700B8484C /* LabelSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E762BA2F8B700B8484C /* LabelSize.swift */; };
+		6CF67E792BA2F8C000B8484C /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E782BA2F8C000B8484C /* ButtonSize.swift */; };
+		6CF67E7B2BA2F9EB00B8484C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E7A2BA2F9EB00B8484C /* LoginViewController.swift */; };
+		6CF67E7D2BA2FA3800B8484C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E7C2BA2FA3800B8484C /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6CF67E422BA2F3E200B8484C /* CafeMario.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CafeMario.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF67E452BA2F3E200B8484C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CF67E472BA2F3E200B8484C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6CF67E492BA2F3E200B8484C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6CF67E4C2BA2F3E200B8484C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CF67E4E2BA2F3E300B8484C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CF67E512BA2F3E300B8484C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CF67E532BA2F3E300B8484C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CF67E5C2BA2F48000B8484C /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
+		6CF67E722BA2F66700B8484C /* CommonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSize.swift; sourceTree = "<group>"; };
+		6CF67E742BA2F89600B8484C /* task.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = task.rtf; sourceTree = "<group>"; };
+		6CF67E762BA2F8B700B8484C /* LabelSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelSize.swift; sourceTree = "<group>"; };
+		6CF67E782BA2F8C000B8484C /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
+		6CF67E7A2BA2F9EB00B8484C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6CF67E7C2BA2FA3800B8484C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,164 @@
 		6CF67E442BA2F3E200B8484C /* CafeMario */ = {
 			isa = PBXGroup;
 			children = (
-				6CF67E452BA2F3E200B8484C /* AppDelegate.swift */,
-				6CF67E472BA2F3E200B8484C /* SceneDelegate.swift */,
-				6CF67E492BA2F3E200B8484C /* ViewController.swift */,
-				6CF67E4B2BA2F3E200B8484C /* Main.storyboard */,
+				6CF67E602BA2F4C500B8484C /* Application */,
+				6CF67E5F2BA2F4C100B8484C /* Scenes */,
+				6CF67E5E2BA2F4B700B8484C /* Constants */,
+				6CF67E5A2BA2F45900B8484C /* Extensions */,
+				6CF67E592BA2F42D00B8484C /* SupportingFiles */,
+			);
+			path = CafeMario;
+			sourceTree = "<group>";
+		};
+		6CF67E592BA2F42D00B8484C /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				6CF67E4E2BA2F3E300B8484C /* Assets.xcassets */,
 				6CF67E502BA2F3E300B8484C /* LaunchScreen.storyboard */,
 				6CF67E532BA2F3E300B8484C /* Info.plist */,
+				6CF67E742BA2F89600B8484C /* task.rtf */,
 			);
-			path = CafeMario;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		6CF67E5A2BA2F45900B8484C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6CF67E5C2BA2F48000B8484C /* UIViewController+Preview.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6CF67E5E2BA2F4B700B8484C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				6CF67E712BA2F65400B8484C /* Sizes */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		6CF67E5F2BA2F4C100B8484C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6CF67E6C2BA2F63200B8484C /* Login */,
+				6CF67E682BA2F61E00B8484C /* Table */,
+				6CF67E642BA2F5BC00B8484C /* Bill */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6CF67E602BA2F4C500B8484C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				6CF67E452BA2F3E200B8484C /* AppDelegate.swift */,
+				6CF67E472BA2F3E200B8484C /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		6CF67E642BA2F5BC00B8484C /* Bill */ = {
+			isa = PBXGroup;
+			children = (
+				6CF67E672BA2F61700B8484C /* Model */,
+				6CF67E662BA2F61300B8484C /* View */,
+				6CF67E652BA2F60E00B8484C /* Controller */,
+			);
+			path = Bill;
+			sourceTree = "<group>";
+		};
+		6CF67E652BA2F60E00B8484C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6CF67E662BA2F61300B8484C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6CF67E672BA2F61700B8484C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6CF67E682BA2F61E00B8484C /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				6CF67E6B2BA2F62D00B8484C /* Model */,
+				6CF67E6A2BA2F62A00B8484C /* View */,
+				6CF67E692BA2F62500B8484C /* Controller */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		6CF67E692BA2F62500B8484C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6CF67E6A2BA2F62A00B8484C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6CF67E6B2BA2F62D00B8484C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6CF67E6C2BA2F63200B8484C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6CF67E6F2BA2F63F00B8484C /* Model */,
+				6CF67E6E2BA2F63C00B8484C /* View */,
+				6CF67E6D2BA2F63700B8484C /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6CF67E6D2BA2F63700B8484C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CF67E7A2BA2F9EB00B8484C /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6CF67E6E2BA2F63C00B8484C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6CF67E7C2BA2FA3800B8484C /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6CF67E6F2BA2F63F00B8484C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6CF67E712BA2F65400B8484C /* Sizes */ = {
+			isa = PBXGroup;
+			children = (
+				6CF67E722BA2F66700B8484C /* CommonSize.swift */,
+				6CF67E762BA2F8B700B8484C /* LabelSize.swift */,
+				6CF67E782BA2F8C000B8484C /* ButtonSize.swift */,
+			);
+			path = Sizes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +233,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CF67E562BA2F3E300B8484C /* Build configuration list for PBXNativeTarget "CafeMario" */;
 			buildPhases = (
+				6CF67E7E2BA2FA8300B8484C /* ShellScript */,
 				6CF67E3E2BA2F3E200B8484C /* Sources */,
 				6CF67E3F2BA2F3E200B8484C /* Frameworks */,
 				6CF67E402BA2F3E200B8484C /* Resources */,
@@ -126,35 +286,53 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CF67E522BA2F3E300B8484C /* LaunchScreen.storyboard in Resources */,
+				6CF67E752BA2F89600B8484C /* task.rtf in Resources */,
 				6CF67E4F2BA2F3E300B8484C /* Assets.xcassets in Resources */,
-				6CF67E4D2BA2F3E200B8484C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CF67E7E2BA2FA8300B8484C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6CF67E3E2BA2F3E200B8484C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CF67E4A2BA2F3E200B8484C /* ViewController.swift in Sources */,
+				6CF67E7B2BA2F9EB00B8484C /* LoginViewController.swift in Sources */,
+				6CF67E792BA2F8C000B8484C /* ButtonSize.swift in Sources */,
+				6CF67E5D2BA2F48000B8484C /* UIViewController+Preview.swift in Sources */,
 				6CF67E462BA2F3E200B8484C /* AppDelegate.swift in Sources */,
+				6CF67E772BA2F8B700B8484C /* LabelSize.swift in Sources */,
 				6CF67E482BA2F3E200B8484C /* SceneDelegate.swift in Sources */,
+				6CF67E7D2BA2FA3800B8484C /* LoginView.swift in Sources */,
+				6CF67E732BA2F66700B8484C /* CommonSize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6CF67E4B2BA2F3E200B8484C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6CF67E4C2BA2F3E200B8484C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6CF67E502BA2F3E300B8484C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,13 +470,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CafeMario/Info.plist;
+				INFOPLIST_FILE = CafeMario/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +486,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndreiShpartou.CafeMario;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,13 +502,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CafeMario/Info.plist;
+				INFOPLIST_FILE = CafeMario/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +518,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndreiShpartou.CafeMario;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -16,7 +16,7 @@ enum CommonSize {
 
     enum Small {
         static let width: CGFloat = 50
-        static let height: CGFloat = 50
+        static let height: CGFloat = 44
     }
 
     enum Medium {

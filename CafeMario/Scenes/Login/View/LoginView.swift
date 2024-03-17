@@ -30,7 +30,14 @@ class LoginView: UIView {
         super.layoutSubviews()
 
         layoutTextFieldBorder(emailTextField)
-        // layoutTextFieldBorder(passwordTextField)
+        layoutTextFieldBorder(passwordTextField)
+
+        // Adjust ImageView corner radius
+        var maxLength = titleImageView.frame.height
+        if maxLength < titleImageView.frame.width {
+            maxLength = titleImageView.frame.width
+        }
+        titleImageView.layer.cornerRadius = maxLength / 2
     }
 
     // MARK: - Setup Views
@@ -41,8 +48,8 @@ class LoginView: UIView {
         addSubview(signInLabel)
         addSubview(emailLabel)
         addSubview(emailTextField)
-        // addSubview(passwordLabel)
-        // addSubview(passwordTextField)
+        addSubview(passwordLabel)
+        addSubview(passwordTextField)
     }
 
     private func getTitleImageView() -> UIImageView {
@@ -83,7 +90,6 @@ class LoginView: UIView {
         textField.keyboardType = .emailAddress
         textField.keyboardAppearance = .dark
         textField.returnKeyType = .done
-        textField.textContentType = .emailAddress
         textField.translatesAutoresizingMaskIntoConstraints = false
 
         return textField
@@ -107,10 +113,29 @@ class LoginView: UIView {
         textField.autocorrectionType = .no
         textField.keyboardAppearance = .dark
         textField.returnKeyType = .done
-        textField.textContentType = .password
+        textField.isSecureTextEntry = true
+        textField.rightView = getShowHideButton()
+        textField.rightViewMode = .always
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }
+
+    private func getShowHideButton() -> UIButton {
+        let button = UIButton()
+        let imageHide = UIImage(systemName: "eye.slash.fill")
+        let imageShow = UIImage(systemName: "eye.fill")
+        button.setImage(imageHide, for: .normal)
+        button.setImage(imageShow, for: .selected)
+        button.sizeToFit()
+        button.addTarget(
+            self,
+            action: #selector(hideShowButtonPressed),
+            for: .touchUpInside
+        )
+
+        return button
+    }
+
     // MARK: - Additional methods
     private func layoutTextFieldBorder(_ sender: UITextField) {
         let border = CALayer()
@@ -126,12 +151,19 @@ class LoginView: UIView {
         sender.layer.addSublayer(border)
         sender.layer.masksToBounds = true
     }
+    // MARK: - Action methods
+    @objc
+    func hideShowButtonPressed(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        passwordTextField.isSecureTextEntry = !sender.isSelected
+    }
 }
 
 // MARK: - Constraints
 private extension LoginView {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            // MARK: - Header
             // Title image
             titleImageView.topAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.topAnchor,
@@ -153,7 +185,7 @@ private extension LoginView {
             ),
             signInLabel.leadingAnchor.constraint(equalTo: titleImageView.leadingAnchor),
             signInLabel.trailingAnchor.constraint(equalTo: titleImageView.trailingAnchor),
-            // Email section
+            // MARK: - Email section
             emailLabel.topAnchor.constraint(
                 equalTo: signInLabel.bottomAnchor,
                 constant: CommonSize.Padding.small
@@ -164,9 +196,19 @@ private extension LoginView {
             emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor),
             emailTextField.leadingAnchor.constraint(equalTo: titleImageView.leadingAnchor),
             emailTextField.trailingAnchor.constraint(equalTo: titleImageView.trailingAnchor),
-            emailTextField.heightAnchor.constraint(equalToConstant: CommonSize.Small.height)
-            // Password section
+            emailTextField.heightAnchor.constraint(equalToConstant: CommonSize.Small.height),
+            // MARK: - Password section
+            passwordLabel.topAnchor.constraint(
+                equalTo: emailTextField.bottomAnchor,
+                constant: CommonSize.Padding.medium
+            ),
+            passwordLabel.leadingAnchor.constraint(equalTo: titleImageView.leadingAnchor),
+            passwordLabel.trailingAnchor.constraint(equalTo: titleImageView.trailingAnchor),
 
+            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor),
+            passwordTextField.leadingAnchor.constraint(equalTo: titleImageView.leadingAnchor),
+            passwordTextField.trailingAnchor.constraint(equalTo: titleImageView.trailingAnchor),
+            passwordTextField.heightAnchor.constraint(equalToConstant: CommonSize.Small.height)
         ])
     }
 }

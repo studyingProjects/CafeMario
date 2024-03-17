@@ -14,6 +14,7 @@ class LoginView: UIView {
     private lazy var emailTextField: UITextField = getEmailTextField()
     private lazy var passwordLabel: UILabel = getPasswordLabel()
     private lazy var passwordTextField: UITextField = getPasswordTextField()
+    private lazy var logInButton: UIButton = getLogInButton()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,6 +51,7 @@ class LoginView: UIView {
         addSubview(emailTextField)
         addSubview(passwordLabel)
         addSubview(passwordTextField)
+        addSubview(logInButton)
     }
 
     private func getTitleImageView() -> UIImageView {
@@ -135,7 +137,18 @@ class LoginView: UIView {
 
         return button
     }
+    // MARK: - LogIn button
+    private func getLogInButton() -> UIButton {
+        let button = UIButton()
+        button.setTitle("Log in", for: .normal)
+        button.backgroundColor = .customRed
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.darkGray, for: .highlighted)
+        button.layer.cornerRadius = CommonSize.cornerRadius
+        button.translatesAutoresizingMaskIntoConstraints = false
 
+        return button
+    }
     // MARK: - Additional methods
     private func layoutTextFieldBorder(_ sender: UITextField) {
         let border = CALayer()
@@ -208,7 +221,18 @@ private extension LoginView {
             passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor),
             passwordTextField.leadingAnchor.constraint(equalTo: titleImageView.leadingAnchor),
             passwordTextField.trailingAnchor.constraint(equalTo: titleImageView.trailingAnchor),
-            passwordTextField.heightAnchor.constraint(equalToConstant: CommonSize.Small.height)
+            passwordTextField.heightAnchor.constraint(equalToConstant: CommonSize.Small.height),
+            // MARK: - LogInButtpn
+            logInButton.leadingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                constant: CommonSize.Padding.large * 2
+            ),
+            logInButton.trailingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.trailingAnchor,
+                constant: -CommonSize.Padding.large * 2
+            ),
+            logInButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -CommonSize.Padding.large),
+            logInButton.heightAnchor.constraint(equalToConstant: ButtonSize.Medium.height)
         ])
     }
 }

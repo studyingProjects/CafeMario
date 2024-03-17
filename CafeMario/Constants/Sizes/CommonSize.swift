@@ -9,9 +9,9 @@ import CoreGraphics
 
 enum CommonSize {
     enum Padding {
-        static let small: CGFloat = 8
-        static let medium: CGFloat = 16
-        static let large: CGFloat = 32
+        static let small: CGFloat = 12
+        static let medium: CGFloat = 24
+        static let large: CGFloat = 48
     }
 
     enum Small {

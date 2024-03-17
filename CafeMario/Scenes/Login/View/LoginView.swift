@@ -9,6 +9,7 @@ import UIKit
 
 class LoginView: UIView {
     private lazy var titleImageView: UIImageView = getTitleImageView()
+    private lazy var signInLabel: UILabel = getSignInLabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,6 +26,7 @@ class LoginView: UIView {
         backgroundColor = .white
 
         addSubview(titleImageView)
+        addSubview(signInLabel)
     }
 
     private func getTitleImageView() -> UIImageView {
@@ -33,7 +35,17 @@ class LoginView: UIView {
         imageView.layer.cornerRadius = CommonSize.Large.height / 2
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+
         return imageView
+    }
+
+    private func getSignInLabel() -> UILabel {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: LabelSize.Medium.fontSize, weight: LabelSize.Large.fontWeight)
+        label.text = "Sign in"
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
     }
 }
 
@@ -53,7 +65,14 @@ private extension LoginView {
                 equalTo: safeAreaLayoutGuide.trailingAnchor,
                 constant: -CommonSize.Padding.large
             ),
-            titleImageView.heightAnchor.constraint(equalToConstant: CommonSize.Large.height)
+            titleImageView.heightAnchor.constraint(equalToConstant: CommonSize.Large.height),
+
+            signInLabel.topAnchor.constraint(
+                equalTo: titleImageView.bottomAnchor,
+                constant: CommonSize.Padding.medium
+            ),
+            signInLabel.leadingAnchor.constraint(equalTo: titleImageView.leadingAnchor),
+            signInLabel.trailingAnchor.constraint(equalTo: titleImageView.trailingAnchor)
         ])
     }
 }

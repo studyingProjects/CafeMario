@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6C06F5972BA57DFB0023EADE /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C06F5962BA57DFB0023EADE /* UIColor+App.swift */; };
 		6C06F5992BA5CE8C0023EADE /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C06F5982BA5CE8C0023EADE /* XCAssets+Generated.swift */; };
+		6C61FE4E2BA7252500008D4E /* CafeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C61FE4D2BA7252500008D4E /* CafeTableView.swift */; };
+		6C61FE502BA7253600008D4E /* CafeTableVIewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C61FE4F2BA7253600008D4E /* CafeTableVIewControllerViewController.swift */; };
+		6C61FE522BA7256E00008D4E /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C61FE512BA7256E00008D4E /* TableModel.swift */; };
 		6CF67E462BA2F3E200B8484C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E452BA2F3E200B8484C /* AppDelegate.swift */; };
 		6CF67E482BA2F3E200B8484C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E472BA2F3E200B8484C /* SceneDelegate.swift */; };
 		6CF67E4F2BA2F3E300B8484C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CF67E4E2BA2F3E300B8484C /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		6C06F5962BA57DFB0023EADE /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
 		6C06F5982BA5CE8C0023EADE /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "XCAssets+Generated.swift"; path = "CafeMario/SupportingFiles/Generated/XCAssets+Generated.swift"; sourceTree = SOURCE_ROOT; };
+		6C61FE4D2BA7252500008D4E /* CafeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeTableView.swift; sourceTree = "<group>"; };
+		6C61FE4F2BA7253600008D4E /* CafeTableVIewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeTableVIewControllerViewController.swift; sourceTree = "<group>"; };
+		6C61FE512BA7256E00008D4E /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
 		6CF67E422BA2F3E200B8484C /* CafeMario.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CafeMario.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF67E452BA2F3E200B8484C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CF67E472BA2F3E200B8484C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				6CF67E6C2BA2F63200B8484C /* Login */,
-				6CF67E682BA2F61E00B8484C /* Table */,
+				6CF67E682BA2F61E00B8484C /* CaffeTable */,
 				6CF67E642BA2F5BC00B8484C /* Bill */,
 			);
 			path = Scenes;
@@ -158,19 +164,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6CF67E682BA2F61E00B8484C /* Table */ = {
+		6CF67E682BA2F61E00B8484C /* CaffeTable */ = {
 			isa = PBXGroup;
 			children = (
 				6CF67E6B2BA2F62D00B8484C /* Model */,
 				6CF67E6A2BA2F62A00B8484C /* View */,
 				6CF67E692BA2F62500B8484C /* Controller */,
 			);
-			path = Table;
+			path = CaffeTable;
 			sourceTree = "<group>";
 		};
 		6CF67E692BA2F62500B8484C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6C61FE4F2BA7253600008D4E /* CafeTableVIewControllerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,6 +185,7 @@
 		6CF67E6A2BA2F62A00B8484C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6C61FE4D2BA7252500008D4E /* CafeTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +193,7 @@
 		6CF67E6B2BA2F62D00B8484C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6C61FE512BA7256E00008D4E /* TableModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,13 +337,16 @@
 				6CF67E7B2BA2F9EB00B8484C /* LoginViewController.swift in Sources */,
 				6CF67E792BA2F8C000B8484C /* ButtonSize.swift in Sources */,
 				6C06F5972BA57DFB0023EADE /* UIColor+App.swift in Sources */,
+				6C61FE502BA7253600008D4E /* CafeTableVIewControllerViewController.swift in Sources */,
 				6CF67E5D2BA2F48000B8484C /* UIViewController+Preview.swift in Sources */,
 				6CF67E462BA2F3E200B8484C /* AppDelegate.swift in Sources */,
+				6C61FE522BA7256E00008D4E /* TableModel.swift in Sources */,
 				6C06F5992BA5CE8C0023EADE /* XCAssets+Generated.swift in Sources */,
 				6CF67E772BA2F8B700B8484C /* LabelSize.swift in Sources */,
 				6CF67E482BA2F3E200B8484C /* SceneDelegate.swift in Sources */,
 				6CF67E7D2BA2FA3800B8484C /* LoginView.swift in Sources */,
 				6CF67E732BA2F66700B8484C /* CommonSize.swift in Sources */,
+				6C61FE4E2BA7252500008D4E /* CafeTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

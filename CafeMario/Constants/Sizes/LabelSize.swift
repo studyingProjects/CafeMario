@@ -14,7 +14,7 @@ enum LabelSize {
     }
 
     enum Medium {
-        static let fontSize: CGFloat = 28
+        static let fontSize: CGFloat = 22
         static let fontWeight: UIFont.Weight = .semibold
     }
 

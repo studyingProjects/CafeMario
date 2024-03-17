@@ -9,10 +9,10 @@ import UIKit
 
 extension UIColor {
     static var customRed: UIColor {
-        UIColor(red: 247, green: 95, blue: 106, alpha: 1)
+        UIColor(red: 247 / 255, green: 95 / 255, blue: 106 / 255, alpha: 1)
     }
 
     static var customGreen: UIColor {
-        UIColor(red: 93, green: 184, blue: 92, alpha: 1)
+        UIColor(red: 93 / 255, green: 184 / 255, blue: 92 / 255, alpha: 1)
     }
 }

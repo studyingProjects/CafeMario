@@ -175,6 +175,11 @@ class LoginView: UIView {
 // MARK: - Constraints
 private extension LoginView {
     private func setupConstraints() {
+        setupHeaderConstraints()
+        setupLogInConstraints()
+    }
+
+    private func setupHeaderConstraints() {
         NSLayoutConstraint.activate([
             // MARK: - Header
             // Title image
@@ -197,7 +202,12 @@ private extension LoginView {
                 constant: CommonSize.Padding.medium
             ),
             signInLabel.leadingAnchor.constraint(equalTo: titleImageView.leadingAnchor),
-            signInLabel.trailingAnchor.constraint(equalTo: titleImageView.trailingAnchor),
+            signInLabel.trailingAnchor.constraint(equalTo: titleImageView.trailingAnchor)
+        ])
+    }
+
+    private func setupLogInConstraints() {
+        NSLayoutConstraint.activate([
             // MARK: - Email section
             emailLabel.topAnchor.constraint(
                 equalTo: signInLabel.bottomAnchor,

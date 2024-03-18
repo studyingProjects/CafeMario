@@ -53,6 +53,13 @@ class CafeTableView: UIView {
         addSubview(countOfGuestsTextField)
         addSubview(numberOfTableLabel)
         addSubview(numberOfTableTextField)
+        addSubview(isTableBookedLabel)
+        addSubview(isTableBookedSwitch)
+        addSubview(isPrepaidLabel)
+        addSubview(isPrepaidSwitch)
+        addSubview(isVIP)
+        addSubview(isVIPSwitch)
+        addSubview(billButton)
     }
 }
 // MARK: - Creation subviews extension
@@ -83,7 +90,7 @@ private extension CafeTableView {
         let button = UILabel()
         button.text = "Count of guests"
         button.textColor = .customRed
-        button.font = .systemFont(ofSize: LabelSize.Small.fontSize, weight: .bold)
+        button.font = .systemFont(ofSize: LabelSize.Small.fontSize, weight: .semibold)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }
@@ -91,9 +98,10 @@ private extension CafeTableView {
     private func getCountOfGuestsTextField() -> UITextField {
         let textField = UITextField()
         textField.placeholder = "Fill in the count of guests"
-        textField.font = .systemFont(ofSize: LabelSize.Small.fontSize, weight: .bold)
+        textField.font = .systemFont(ofSize: LabelSize.Small.fontSize, weight: .semibold)
         textField.borderStyle = .none
         textField.autocapitalizationType = .words
+        textField.keyboardType = .numberPad
         textField.keyboardAppearance = .dark
         textField.returnKeyType = .done
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -104,7 +112,7 @@ private extension CafeTableView {
         let button = UILabel()
         button.text = "Number of table"
         button.textColor = .customRed
-        button.font = .systemFont(ofSize: LabelSize.Small.fontSize, weight: .bold)
+        button.font = .systemFont(ofSize: LabelSize.Small.fontSize, weight: .semibold)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }
@@ -112,22 +120,80 @@ private extension CafeTableView {
     private func getNumberOfTableTextField() -> UITextField {
         let textField = UITextField()
         textField.placeholder = "Fill in the table number"
-        textField.font = .systemFont(ofSize: LabelSize.Small.fontSize, weight: .bold)
+        textField.font = .systemFont(ofSize: LabelSize.Small.fontSize, weight: .semibold)
         textField.borderStyle = .none
         textField.autocapitalizationType = .words
+        textField.keyboardType = .numberPad
         textField.keyboardAppearance = .dark
         textField.returnKeyType = .done
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }
     // MARK: - Get bottom views
-    private func getIsTableBookedLabel() -> UILabel { UILabel() }
-    private func getIsTableBookedSwitch() -> UISwitch { UISwitch() }
-    private func getIsPrepaidLabel() -> UILabel { UILabel() }
-    private func getIsPrepaidSwitch() -> UISwitch { UISwitch() }
-    private func getIsVIPLabel() -> UILabel { UILabel() }
-    private func getIsVIPSwitch() -> UISwitch { UISwitch() }
-    private func getBillButton() -> UIButton { UIButton() }
+    private func getIsTableBookedLabel() -> UILabel {
+        let label = UILabel()
+        label.text = "Table was booked?"
+        label.textColor = .customRed
+        label.font = .systemFont(ofSize: LabelSize.Small.fontSize, weight: .semibold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }
+
+    private func getIsTableBookedSwitch() -> UISwitch {
+        let switcher = UISwitch()
+        switcher.isOn = true
+        switcher.translatesAutoresizingMaskIntoConstraints = false
+
+        return switcher
+    }
+
+    private func getIsPrepaidLabel() -> UILabel {
+        let label = UILabel()
+        label.text = "Prepaid?"
+        label.textColor = .customRed
+        label.font = .systemFont(ofSize: LabelSize.Small.fontSize, weight: .semibold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }
+
+    private func getIsPrepaidSwitch() -> UISwitch {
+        let switcher = UISwitch()
+        switcher.isOn = false
+        switcher.translatesAutoresizingMaskIntoConstraints = false
+        
+        return switcher
+    }
+    
+    private func getIsVIPLabel() -> UILabel {
+        let label = UILabel()
+        label.text = "VIP room?"
+        label.textColor = .customRed
+        label.font = .systemFont(ofSize: LabelSize.Small.fontSize, weight: .semibold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }
+
+    private func getIsVIPSwitch() -> UISwitch {
+        let switcher = UISwitch()
+        switcher.isOn = false
+        switcher.translatesAutoresizingMaskIntoConstraints = false
+        
+        return switcher
+    }
+    private func getBillButton() -> UIButton {
+        let button = UIButton()
+        button.setTitle("Get the bill", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.lightGray, for: .highlighted)
+        button.backgroundColor = .customRed
+        button.layer.cornerRadius = CommonSize.cornerRadius
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }
 }
 // MARK: - Additional methods
 private extension CafeTableView {
@@ -188,10 +254,63 @@ private extension CafeTableView {
             numberOfTableTextField.leadingAnchor.constraint(equalTo: numberOfTableLabel.leadingAnchor),
             numberOfTableTextField.trailingAnchor.constraint(equalTo: numberOfTableLabel.trailingAnchor),
             numberOfTableTextField.heightAnchor.constraint(equalToConstant: CommonSize.Small.height)
-                
         ])
     }
     // MARK: - Bottom constraints
     private func setupBottomConstraints() {
+        NSLayoutConstraint.activate([
+            // Table
+            isTableBookedSwitch.topAnchor.constraint(
+                equalTo: numberOfTableTextField.bottomAnchor,
+                constant: CommonSize.Padding.large
+            ),
+            isTableBookedSwitch.trailingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.trailingAnchor,
+                constant: -CommonSize.Padding.large - CommonSize.Padding.medium
+            ),
+            isTableBookedLabel.centerYAnchor.constraint(equalTo: isTableBookedSwitch.centerYAnchor),
+            isTableBookedLabel.leadingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                constant: CommonSize.Padding.large + CommonSize.Padding.medium
+            ),
+            isTableBookedLabel.trailingAnchor.constraint(
+                equalTo: isTableBookedSwitch.leadingAnchor,
+                constant: CommonSize.Padding.small
+            ),
+            // Prepaid
+            isPrepaidSwitch.topAnchor.constraint(
+                equalTo: isTableBookedSwitch.bottomAnchor,
+                constant: CommonSize.Padding.medium
+            ),
+            isPrepaidSwitch.trailingAnchor.constraint(equalTo: isTableBookedSwitch.trailingAnchor),
+            isPrepaidLabel.centerYAnchor.constraint(equalTo: isPrepaidSwitch.centerYAnchor),
+            isPrepaidLabel.leadingAnchor.constraint(equalTo: isTableBookedLabel.leadingAnchor),
+            isPrepaidLabel.trailingAnchor.constraint(
+                equalTo: isPrepaidSwitch.leadingAnchor,
+                constant: CommonSize.Padding.small
+            ),
+            isVIPSwitch.topAnchor.constraint(
+                equalTo: isPrepaidSwitch.bottomAnchor,
+                constant: CommonSize.Padding.medium
+            ),
+            isVIPSwitch.trailingAnchor.constraint(equalTo: isPrepaidSwitch.trailingAnchor),
+            isVIP.centerYAnchor.constraint(equalTo: isVIPSwitch.centerYAnchor),
+            isVIP.leadingAnchor.constraint(equalTo: isPrepaidLabel.leadingAnchor),
+            isVIP.trailingAnchor.constraint(
+                equalTo: isVIPSwitch.leadingAnchor,
+                constant: CommonSize.Padding.small
+            ),
+            
+            billButton.leadingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                constant: CommonSize.Padding.large * 2
+            ),
+            billButton.trailingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.trailingAnchor,
+                constant: -CommonSize.Padding.large * 2
+            ),
+            billButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -CommonSize.Padding.large),
+            billButton.heightAnchor.constraint(equalToConstant: ButtonSize.Medium.height)
+        ])
     }
 }

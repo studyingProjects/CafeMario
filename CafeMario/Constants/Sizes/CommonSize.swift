@@ -29,5 +29,5 @@ enum CommonSize {
         static let height: CGFloat = 300
     }
 
-    static let cornerRadius: CGFloat = 20
+    static let cornerRadius: CGFloat = 10
 }

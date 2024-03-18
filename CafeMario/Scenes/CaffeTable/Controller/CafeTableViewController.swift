@@ -13,7 +13,7 @@ protocol CafeTableViewDelegate: AnyObject {
 }
 
 class CafeTableViewController: UIViewController {
-    private var tableModel: TableModel?
+    private lazy var tableModel = TableModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class CafeTableViewController: UIViewController {
 
 extension CafeTableViewController: CafeTableViewDelegate {
     func setTableOption(_ option: TableOptions, with value: Bool) {
-        tableModel?.setTableOption(option, with: value)
+        tableModel.setTableOption(option, with: value)
     }
 
     func getBill() {

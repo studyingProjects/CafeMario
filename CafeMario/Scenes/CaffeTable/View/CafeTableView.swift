@@ -146,7 +146,7 @@ private extension CafeTableView {
         let switcher = UISwitch()
         switcher.isOn = false
         switcher.translatesAutoresizingMaskIntoConstraints = false
-        switcher.addTarget(self, action: #selector(switcherChanged), for: .valueChanged)
+        switcher.addTarget(self, action: #selector(isTableBookedChanged), for: .valueChanged)
 
         return switcher
     }
@@ -165,6 +165,7 @@ private extension CafeTableView {
         let switcher = UISwitch()
         switcher.isOn = false
         switcher.translatesAutoresizingMaskIntoConstraints = false
+        switcher.addTarget(self, action: #selector(isPrepaidSwitchChanged), for: .valueChanged)
 
         return switcher
     }
@@ -183,6 +184,7 @@ private extension CafeTableView {
         let switcher = UISwitch()
         switcher.isOn = false
         switcher.translatesAutoresizingMaskIntoConstraints = false
+        switcher.addTarget(self, action: #selector(isVIPSwitchChanged), for: .valueChanged)
 
         return switcher
     }
@@ -200,9 +202,22 @@ private extension CafeTableView {
     }
     // MARK: - Action methods
     @objc
-    private func switcherChanged(_ sender: UISwitch, option: TableOptions) {
-        sender.isOn = !sender.isOn
-        delegate?.setTableOption(option, with: sender.isOn)
+    private func isTableBookedChanged(_ sender: UISwitch) {
+        switcherChanged(.isTableBooked, with: sender.isOn)
+    }
+
+    @objc
+    private func isPrepaidSwitchChanged(_ sender: UISwitch) {
+        switcherChanged(.isPrepaid, with: sender.isOn)
+    }
+
+    @objc
+    private func isVIPSwitchChanged(_ sender: UISwitch) {
+        switcherChanged(.isVIP, with: sender.isOn)
+    }
+
+    private func switcherChanged(_ option: TableOptions, with value: Bool) {
+        delegate?.setTableOption(option, with: value)
     }
 }
 // MARK: - Additional methods

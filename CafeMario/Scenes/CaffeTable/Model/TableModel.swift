@@ -29,9 +29,9 @@ struct TableModel: TableModelProtocol {
     var fullName: String = ""
     var countOfGuests: Int = 0
     var tableNumber: Int = 0
-    var isTableBooked: Bool
-    var isPrepaid: Bool
-    var isVIP: Bool
+    var isTableBooked = false
+    var isPrepaid = false
+    var isVIP = false
 
     mutating func setTableOption(_ option: TableOptions, with value: Bool) {
         switch option {

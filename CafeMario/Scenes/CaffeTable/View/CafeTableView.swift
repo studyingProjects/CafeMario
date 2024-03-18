@@ -25,6 +25,8 @@ class CafeTableView: UIView {
     // Bottom button
     private lazy var billButton: UIButton = getBillButton()
 
+    var delegate: CafeTableViewDelegate?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -142,8 +144,9 @@ private extension CafeTableView {
 
     private func getIsTableBookedSwitch() -> UISwitch {
         let switcher = UISwitch()
-        switcher.isOn = true
+        switcher.isOn = false
         switcher.translatesAutoresizingMaskIntoConstraints = false
+        switcher.addTarget(self, action: #selector(switcherChanged), for: .valueChanged)
 
         return switcher
     }
@@ -194,6 +197,12 @@ private extension CafeTableView {
         button.translatesAutoresizingMaskIntoConstraints = false
 
         return button
+    }
+    // MARK: - Action methods
+    @objc
+    private func switcherChanged(_ sender: UISwitch, option: TableOptions) {
+        sender.isOn = !sender.isOn
+        delegate?.setTableOption(option, with: sender.isOn)
     }
 }
 // MARK: - Additional methods

@@ -7,11 +7,30 @@
 
 import UIKit
 
+protocol CafeTableViewDelegate: AnyObject {
+    func getBill()
+    func setTableOption(_ option: TableOptions, with value: Bool)
+}
+
 class CafeTableViewController: UIViewController {
+    private var tableModel: TableModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view = CafeTableView()
+        let cafeTableView = CafeTableView()
+        cafeTableView.delegate = self
+        view = cafeTableView
+
         title = "Cafe Mario"
+    }
+}
+
+extension CafeTableViewController: CafeTableViewDelegate {
+    func setTableOption(_ option: TableOptions, with value: Bool) {
+        tableModel?.setTableOption(option, with: value)
+    }
+
+    func getBill() {
     }
 }

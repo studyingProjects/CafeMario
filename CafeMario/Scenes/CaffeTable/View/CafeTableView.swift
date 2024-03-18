@@ -106,6 +106,7 @@ private extension CafeTableView {
         textField.autocapitalizationType = .words
         textField.keyboardType = .numberPad
         textField.keyboardAppearance = .dark
+        textField.delegate = self
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }
@@ -128,6 +129,7 @@ private extension CafeTableView {
         textField.keyboardType = .numberPad
         textField.keyboardAppearance = .dark
         textField.returnKeyType = .done
+        textField.delegate = self
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }
@@ -236,6 +238,20 @@ extension CafeTableView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        guard let value = textField.text, !value.isEmpty else {
+            return
+        }
+
+        if textField == countOfGuestsTextField {
+            delegate?.updateCountOfGuests(with: Int(value) ?? 0)
+        } else if textField == numberOfTableTextField {
+            delegate?.updateNumberOfTable(with: Int(value) ?? 0)
+        } else if textField == fullNameTextField {
+            delegate?.updateFullName(with: value)
+        }
     }
 }
 // MARK: - Constraints

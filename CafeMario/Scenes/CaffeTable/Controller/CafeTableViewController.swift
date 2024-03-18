@@ -8,8 +8,10 @@
 import UIKit
 
 protocol CafeTableViewDelegate: AnyObject {
-    func getBill()
     func setTableOption(_ option: TableOptions, with value: Bool)
+    func updateFullName(with value: String)
+    func updateCountOfGuests(with value: Int)
+    func updateNumberOfTable(with value: Int)
 }
 
 class CafeTableViewController: UIViewController {
@@ -31,10 +33,20 @@ class CafeTableViewController: UIViewController {
 }
 
 extension CafeTableViewController: CafeTableViewDelegate {
+
     func setTableOption(_ option: TableOptions, with value: Bool) {
         tableModel.setTableOption(option, with: value)
     }
 
-    func getBill() {
+    func updateFullName(with value: String) {
+        tableModel.fullName = value
+    }
+
+    func updateCountOfGuests(with value: Int) {
+        tableModel.countOfGuests = value
+    }
+
+    func updateNumberOfTable(with value: Int) {
+        tableModel.tableNumber = value
     }
 }

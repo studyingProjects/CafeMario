@@ -15,13 +15,3 @@ class CafeTableViewController: UIViewController {
         title = "Cafe Mario"
     }
 }
-
-import SwiftUI
-struct ViewControllerProvider: PreviewProvider {
-    static var previews: some View {
-        Group {
-            // change to your vc
-            CafeTableViewController().preview()
-        }
-    }
-}

@@ -162,10 +162,10 @@ private extension CafeTableView {
         let switcher = UISwitch()
         switcher.isOn = false
         switcher.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return switcher
     }
-    
+
     private func getIsVIPLabel() -> UILabel {
         let label = UILabel()
         label.text = "VIP room?"
@@ -180,9 +180,10 @@ private extension CafeTableView {
         let switcher = UISwitch()
         switcher.isOn = false
         switcher.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return switcher
     }
+
     private func getBillButton() -> UIButton {
         let button = UIButton()
         button.setTitle("Get the bill", for: .normal)
@@ -191,7 +192,7 @@ private extension CafeTableView {
         button.backgroundColor = .customRed
         button.layer.cornerRadius = CommonSize.cornerRadius
         button.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return button
     }
 }
@@ -211,6 +212,7 @@ private extension CafeTableView {
     private func setupConstraints() {
         setupHeaderConstraints()
         setupBottomConstraints()
+        setBillButtonConstraints()
     }
     // MARK: - Header constraints
     private func setupHeaderConstraints() {
@@ -299,8 +301,12 @@ private extension CafeTableView {
             isVIP.trailingAnchor.constraint(
                 equalTo: isVIPSwitch.leadingAnchor,
                 constant: CommonSize.Padding.small
-            ),
-            
+            )
+        ])
+    }
+
+    private func setBillButtonConstraints() {
+        NSLayoutConstraint.activate([
             billButton.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
                 constant: CommonSize.Padding.large * 2

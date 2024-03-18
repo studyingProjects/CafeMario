@@ -26,6 +26,11 @@ class BillView: UIView {
 
     private func setupViews() {
         backgroundColor = .white
+
+        addSubview(fullNameLabel)
+        addSubview(countOfGuestsLabel)
+        addSubview(numberOfTableLabel)
+        addSubview(billButton)
     }
 }
 
@@ -73,5 +78,44 @@ private extension BillView {
 // MARK: - Constraints
 private extension BillView {
     private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            fullNameLabel.topAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.topAnchor,
+                constant: CommonSize.Padding.large
+            ),
+            fullNameLabel.leadingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                constant: CommonSize.Padding.medium
+            ),
+            fullNameLabel.trailingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.trailingAnchor,
+                constant: CommonSize.Padding.medium
+            ),
+
+            countOfGuestsLabel.topAnchor.constraint(
+                equalTo: fullNameLabel.bottomAnchor,
+                constant: CommonSize.Padding.large
+            ),
+            countOfGuestsLabel.leadingAnchor.constraint(equalTo: fullNameLabel.leadingAnchor),
+            countOfGuestsLabel.trailingAnchor.constraint(equalTo: fullNameLabel.trailingAnchor),
+
+            numberOfTableLabel.topAnchor.constraint(
+                equalTo: countOfGuestsLabel.bottomAnchor,
+                constant: CommonSize.Padding.large
+            ),
+            numberOfTableLabel.leadingAnchor.constraint(equalTo: countOfGuestsLabel.leadingAnchor),
+            numberOfTableLabel.trailingAnchor.constraint(equalTo: countOfGuestsLabel.trailingAnchor),
+
+            billButton.leadingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                constant: CommonSize.Padding.large * 2
+            ),
+            billButton.trailingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.trailingAnchor,
+                constant: -CommonSize.Padding.large * 2
+            ),
+            billButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -CommonSize.Padding.large),
+            billButton.heightAnchor.constraint(equalToConstant: ButtonSize.Medium.height)
+        ])
     }
 }

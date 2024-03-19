@@ -199,6 +199,7 @@ private extension CafeTableView {
         button.backgroundColor = .customRed
         button.layer.cornerRadius = CommonSize.cornerRadius
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(getBill), for: .touchUpInside)
 
         return button
     }
@@ -220,6 +221,11 @@ private extension CafeTableView {
 
     private func switcherChanged(_ option: TableOptions, with value: Bool) {
         delegate?.setTableOption(option, with: value)
+    }
+
+    @objc
+    private func getBill(_ sender: UIButton) {
+        delegate?.getBill()
     }
 }
 // MARK: - Additional methods

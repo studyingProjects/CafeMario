@@ -12,7 +12,7 @@ protocol Coordinator: AnyObject {
 
     func start()
     func openTableReservetionScene()
-    func openBillScene()
+    func openBillScene(with tableData: TableModelProtocol?)
 }
 
 class MainCoordinator: Coordinator {
@@ -34,9 +34,10 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
 
-    func openBillScene() {
+    func openBillScene(with tableData: TableModelProtocol?) {
         let viewController = BillViewController()
         viewController.coordinator = self
+        viewController.tableModel = tableData
         navigationController.pushViewController(viewController, animated: true)
     }
 }

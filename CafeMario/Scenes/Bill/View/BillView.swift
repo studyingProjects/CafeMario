@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol BillViewControllerDelegate: AnyObject {
+    func updateView(with data: TableModelProtocol)
+}
+
 class BillView: UIView {
     private lazy var fullNameLabel: UILabel = getFullNameLabel()
     private lazy var countOfGuestsLabel: UILabel = getCountOfGuestsLabel()
@@ -75,6 +79,15 @@ private extension BillView {
         return button
     }
 }
+// MARK: - Delegation
+extension BillView: BillViewControllerDelegate {
+    func updateView(with data: TableModelProtocol) {
+        fullNameLabel.text = "Full Name: \(data.fullName)"
+        countOfGuestsLabel.text = "Count of guests: \(data.countOfGuests)"
+        numberOfTableLabel.text = "Number of table: \(data.tableNumber)"
+    }
+}
+
 // MARK: - Constraints
 private extension BillView {
     private func setupConstraints() {

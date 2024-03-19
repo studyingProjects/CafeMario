@@ -12,6 +12,7 @@ protocol CafeTableViewDelegate: AnyObject {
     func updateFullName(with value: String)
     func updateCountOfGuests(with value: Int)
     func updateNumberOfTable(with value: Int)
+    func getBill()
 }
 
 class CafeTableViewController: UIViewController {
@@ -49,5 +50,16 @@ extension CafeTableViewController: CafeTableViewDelegate {
 
     func updateNumberOfTable(with value: Int) {
         tableModel.tableNumber = value
+    }
+
+    func getBill() {
+        let alert = UIAlertController(title: "Make a bill?", message: nil, preferredStyle: .alert)
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let actionOK = UIAlertAction(title: "Bill", style: .default) { _ in
+            self.coordinator?.openBillScene(with: self.tableModel)
+        }
+        alert.addAction(actionCancel)
+        alert.addAction(actionOK)
+        present(alert, animated: true)
     }
 }

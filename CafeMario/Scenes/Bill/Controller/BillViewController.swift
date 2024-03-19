@@ -9,11 +9,19 @@ import UIKit
 
 class BillViewController: UIViewController {
     weak var coordinator: Coordinator?
+    var tableModel: TableModelProtocol?
+    var delegate: BillViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view = BillView()
+        let billView = BillView()
+        delegate = billView
+        if let unwrappedModel = tableModel {
+            delegate?.updateView(with: unwrappedModel)
+        }
+
+        view = billView
     }
 }
 

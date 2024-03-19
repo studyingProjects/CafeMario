@@ -237,6 +237,10 @@ private extension CafeTableView {
 extension CafeTableView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if textField == fullNameTextField {
+            countOfGuestsTextField.becomeFirstResponder()
+        }
+
         return true
     }
 

@@ -15,6 +15,7 @@ protocol CafeTableViewDelegate: AnyObject {
 }
 
 class CafeTableViewController: UIViewController {
+    weak var coordinator: Coordinator?
     private lazy var tableModel = TableModel()
 
     override func viewDidLoad() {

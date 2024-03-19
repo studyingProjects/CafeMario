@@ -12,6 +12,7 @@
 		6C61FE4E2BA7252500008D4E /* CafeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C61FE4D2BA7252500008D4E /* CafeTableView.swift */; };
 		6C61FE502BA7253600008D4E /* CafeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C61FE4F2BA7253600008D4E /* CafeTableViewController.swift */; };
 		6C61FE522BA7256E00008D4E /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C61FE512BA7256E00008D4E /* TableModel.swift */; };
+		6C69F6D82BA9933A003EC92A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C69F6D72BA9933A003EC92A /* MainCoordinator.swift */; };
 		6CD764B52BA8652E00DD3FFE /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD764B42BA8652E00DD3FFE /* BillViewController.swift */; };
 		6CD764B72BA8654600DD3FFE /* BillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD764B62BA8654600DD3FFE /* BillView.swift */; };
 		6CF67E462BA2F3E200B8484C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF67E452BA2F3E200B8484C /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 		6C61FE4D2BA7252500008D4E /* CafeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeTableView.swift; sourceTree = "<group>"; };
 		6C61FE4F2BA7253600008D4E /* CafeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeTableViewController.swift; sourceTree = "<group>"; };
 		6C61FE512BA7256E00008D4E /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
+		6C69F6D72BA9933A003EC92A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		6CD764B42BA8652E00DD3FFE /* BillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		6CD764B62BA8654600DD3FFE /* BillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillView.swift; sourceTree = "<group>"; };
 		6CF67E422BA2F3E200B8484C /* CafeMario.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CafeMario.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C69F6D52BA9931E003EC92A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				6C69F6D72BA9933A003EC92A /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		6CF67E392BA2F3E200B8484C = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				6CF67E602BA2F4C500B8484C /* Application */,
+				6C69F6D52BA9931E003EC92A /* Coordinators */,
 				6CF67E5F2BA2F4C100B8484C /* Scenes */,
 				6CF67E5E2BA2F4B700B8484C /* Constants */,
 				6CF67E5A2BA2F45900B8484C /* Extensions */,
@@ -340,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C69F6D82BA9933A003EC92A /* MainCoordinator.swift in Sources */,
 				6CF67E7B2BA2F9EB00B8484C /* LoginViewController.swift in Sources */,
 				6CD764B52BA8652E00DD3FFE /* BillViewController.swift in Sources */,
 				6CF67E792BA2F8C000B8484C /* ButtonSize.swift in Sources */,

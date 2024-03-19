@@ -7,10 +7,26 @@
 
 import UIKit
 
+protocol LoginViewDelegate: AnyObject {
+    func passToCaffeTable(_ sender: UIButton)
+}
+
 class LoginViewController: UIViewController {
+    weak var coordinator: Coordinator?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view = LoginView()
+        let loginView = LoginView()
+        loginView.delegate = self
+
+        view = loginView
+    }
+}
+
+// MARK: - Delegation
+extension LoginViewController: LoginViewDelegate {
+    func passToCaffeTable(_ sender: UIButton) {
+        coordinator?.openTableReservetionScene()
     }
 }

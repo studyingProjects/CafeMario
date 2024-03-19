@@ -8,6 +8,8 @@
 import UIKit
 
 class LoginView: UIView {
+    var delegate: LoginViewDelegate?
+
     private lazy var titleImageView: UIImageView = getTitleImageView()
     private lazy var signInLabel: UILabel = getSignInLabel()
     private lazy var emailLabel: UILabel = getEmailLabel()
@@ -146,6 +148,7 @@ class LoginView: UIView {
         button.setTitleColor(.darkGray, for: .highlighted)
         button.layer.cornerRadius = CommonSize.cornerRadius
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(passToCaffeTable), for: .touchUpInside)
 
         return button
     }
@@ -170,8 +173,12 @@ class LoginView: UIView {
         sender.isSelected = !sender.isSelected
         passwordTextField.isSecureTextEntry = !sender.isSelected
     }
-}
 
+    @objc
+    func passToCaffeTable(_ sender: UIButton) {
+        delegate?.passToCaffeTable(sender)
+    }
+}
 // MARK: - Constraints
 private extension LoginView {
     private func setupConstraints() {
